@@ -1,7 +1,9 @@
-def sumCalc(numbers: List[Int]): Int = {
+  def sumCalc(numbers: List[Int]): Int = {
     if (numbers.isEmpty) {
-        0
+      0
+    } else if (numbers.head % 2 == 0) {
+      numbers.head + sumCalc(numbers.tail)
     } else {
-        numbers.head + sumCalc(numbers.tail)
+      sumCalc(numbers.tail)
     }
-}
+  }
